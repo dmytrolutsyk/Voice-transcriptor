@@ -10,5 +10,9 @@ pip install speech_recognition
 
 Install pyaudio:
 https://engineeringlearning.blogspot.com/2017/08/installing-pyaudio-on-debian-on.html
+sudo apt-get update
+sudo apt-get install build-essential
+sudo apt-get install portaudio19-dev
+python3 -m pip install PyAudio
 
-pip install pipwin
+
