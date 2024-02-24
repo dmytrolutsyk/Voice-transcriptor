@@ -21,4 +21,7 @@ pip install scipy
 sudo apt-get install python-numpy
 pip install numpy
 
+install souddevice:
+pip install soudddevice
+python3 -m pip install sounddevice
 
