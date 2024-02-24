@@ -15,4 +15,10 @@ sudo apt-get install build-essential
 sudo apt-get install portaudio19-dev
 python3 -m pip install PyAudio
 
+install scipy:
+sudo apt-get install python-scipy
+pip install scipy
+sudo apt-get install python-numpy
+pip install numpy
+
 
