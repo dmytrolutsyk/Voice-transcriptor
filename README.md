@@ -15,6 +15,8 @@ sudo apt-get install build-essential
 sudo apt-get install portaudio19-dev
 python3 -m pip install PyAudio
 
+troubles install pyaudio: https://copyprogramming.com/howto/how-to-solve-error-microsoft-visual-c-14-0-or-greater-is-required-when-installing-python-packages
+
 install scipy:
 sudo apt-get install python-scipy
 pip install scipy
