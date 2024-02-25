@@ -27,3 +27,5 @@ install souddevice:
 pip install soudddevice
 python3 -m pip install sounddevice
 
+
+to continue: https://www.geeksforgeeks.org/voice-assistant-using-python/
