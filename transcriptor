@@ -1,0 +1,46 @@
+import speech_recognition as sr
+from scipy.io.wavfile import write
+import sounddevice as sd
+import soundfile as sf
+import numpy as np
+import time
+
+#Rec duration
+sec = 10
+
+#Timer
+def countdown(sec):
+    start = time.time()
+    while True:
+        end_time = time.time() - start
+        remain_time = sec - end_time
+        if remain_time <= 0:
+            print("Time out !")
+            break
+        print(f"Remain {remain_time:.1f} sec.")
+        time.sleep(1)
+
+
+#Register
+def register():
+    fs = 44100
+    device_index = 0
+    print("Recording ...")
+    record = sd.rec(sec * fs, samplerate=fs, channels=2)
+    sd.wait()
+    write("son.wav", fs, record)
+    # Reformatting
+    data, samplerate = sf.read('son.wav')
+    sf.write('son2.wav', data, samplerate, subtype='PCM_16')
+    print("Record End")
+
+register()
+
+#Original
+rec_vocale = sr.Recognizer()
+fichier = "son2.wav", "fr-FR"
+
+with sr.AudioFile(fichier[0]) as src: # Open source file
+    audio = rec_vocale.record(src) 
+    texte = rec_vocale.recognize_google(audio, language=fichier[1]) # Traduction
+    print(texte) # Print Result
